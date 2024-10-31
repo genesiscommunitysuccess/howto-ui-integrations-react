@@ -1,6 +1,7 @@
 const { resolve, join } = require('path');
 const webpack = require('webpack');
 const Dotenv = require('dotenv-webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = (env, argv) => {
   const mode = argv.mode || 'development';
@@ -69,6 +70,9 @@ module.exports = (env, argv) => {
       ],
     },
     plugins: [
+      new HtmlWebpackPlugin({
+        template: './index.html',
+      }),
       new Dotenv(),
       new webpack.DefinePlugin({
         BUILDER: JSON.stringify('webpack'),
