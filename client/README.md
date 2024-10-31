@@ -14,7 +14,7 @@ npm run bootstrap
 2. Start the development server:
 
 ```shell
-npm run start
+npm run dev
 ```
 
 3. Build for production:
